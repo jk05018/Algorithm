@@ -26,21 +26,7 @@ public class ClockSync {
 		"...xxx...x...x.."
 	};
 
-	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		int C = sc.nextInt();
-		for (int c = 0; c < C; ++c) {
-			int[] clocks = new int[CLOCKS];
-
-			for (int i = 0; i < CLOCKS; ++i) {
-				clocks[i] = sc.nextInt();
-			}
-
-			System.out.println(solve(clocks, 0));
-		}
-	}
-
-	public static int solve(int[] clocks, int swtch) {
+	public int solve(int[] clocks, int swtch) {
 		if (swtch == SWITCHES)
 			return isAligned(clocks) ? 0 : INF;
 
@@ -54,7 +40,7 @@ public class ClockSync {
 
 	}
 
-	private static void push(final int[] clocks, final int swtch) {
+	private void push(final int[] clocks, final int swtch) {
 		for (int i = 0; i < CLOCKS; ++i) {
 			if (linked[swtch].charAt(i) == 'x') {
 				clocks[i] += 3;
@@ -66,7 +52,7 @@ public class ClockSync {
 	}
 
 	// 시계가 전부 정렬되어 있는지 확인하는 메서드
-	public static boolean isAligned(int[] clocks) {
+	public boolean isAligned(int[] clocks) {
 		for (int clock : clocks) {
 			if (clock != 12) {
 				return false;

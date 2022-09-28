@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class LetterCombination17 {
-	static final String[] ALPHAS = {"","","abc","def","ghi","jkl","mno","pqrs","tuv","wxyz"};
+	static final String[] ALPHAS = {"", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
 	static List<String> answer;
 
 	// my solution
@@ -14,19 +14,19 @@ public class LetterCombination17 {
 		return answer;
 	}
 
-	public void choose(int next, String ans, String digits){
+	public void choose(int next, String ans, String digits) {
 		// 기저 사례
-		if(next == digits.length()){
+		if (next == digits.length()) {
 
-			if(ans != "")
+			if (ans != "")
 				answer.add(ans);
 			return;
 		}
 
 		int num = digits.charAt(next) - '0';
 
-		for(int i=0; i<ALPHAS[num].length() ; ++i){
-			choose(next + 1, ans + ALPHAS[num].charAt(i) , digits);
+		for (int i = 0; i < ALPHAS[num].length(); ++i) {
+			choose(next + 1, ans + ALPHAS[num].charAt(i), digits);
 		}
 	}
 }

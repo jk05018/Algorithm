@@ -3,7 +3,7 @@ package com.example.algorithm.leetcode.backtracking;
 import java.util.ArrayList;
 import java.util.List;
 
-public class LetterCombination17 {
+public class LetterCombination_17 {
 	static final String[] ALPHAS = {"", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
 	static List<String> answer;
 

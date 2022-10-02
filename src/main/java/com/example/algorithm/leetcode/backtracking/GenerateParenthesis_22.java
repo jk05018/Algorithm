@@ -3,7 +3,7 @@ package com.example.algorithm.leetcode.backtracking;
 import java.util.ArrayList;
 import java.util.List;
 
-public class GenerateParenthesis22 {
+public class GenerateParenthesis_22 {
 	static List<String> answer;
 
 	public List<String> generateParenthesis(int n) {

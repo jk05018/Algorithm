@@ -1,4 +1,4 @@
-package com.example.algorithm.jongmanbook.dynamicprogramming;
+package com.example.algorithm.jongmanbook.dp;
 
 import java.util.Scanner;
 

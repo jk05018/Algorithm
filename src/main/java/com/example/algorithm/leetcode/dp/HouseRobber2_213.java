@@ -29,7 +29,6 @@ public class HouseRobber2_213 {
 	// 1. Recursion
 
 	/*
-
 	Since last element is the adjacent of the first element, we can have 3 observations.
 
 	1. In our answer, there will not be both first and last element together.
@@ -39,7 +38,6 @@ public class HouseRobber2_213 {
 	So our final answer will be max(step2, step3).
 
 	But this recursive solution will gives TLE as there are so many overlapping subproblems
-
 	*/
 	public int rob1(int[] nums) {
 		int length = nums.length;
@@ -67,7 +65,6 @@ public class HouseRobber2_213 {
 	// 2. Memoization
 
 	/*
-
 	Use 2 dp tables. One to track the results while we are not cosnidering the first element and the first one while we are considering the first element.
 
 	Then just apply the dp tables and save the result at the very end where we are doing the return statement.
@@ -113,7 +110,6 @@ public class HouseRobber2_213 {
 	// 3. Tabulation
 
 	/*
-
 	Now we can go for the tabulation method and get rid of the extra stack space we are using
 
 	TC : O(N)
@@ -160,7 +156,6 @@ public class HouseRobber2_213 {
 	// 4. Space Optimized
 
 	/*
-
 	We can make 1 more observation that, we only care about the previous house and the previous previous house. So instead of the dp arrays, we can just make use of two variable and apply the same logic which will reduce our space further
 	*/
 

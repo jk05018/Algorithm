@@ -176,3 +176,7 @@ gradle-app.setting
 *.hprof
 
 # End of https://www.toptal.com/developers/gitignore/api/intellij+all,macos,gradle,java
+
+# add sublime files
+build.sublime-project
+build.sublime-workspace

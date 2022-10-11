@@ -1,4 +1,4 @@
-package com.example.algorithm.leetcode;
+package com.example.algorithm.leetcode.mergeconquer;
 
 import java.util.*;
 

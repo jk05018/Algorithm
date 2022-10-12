@@ -9,71 +9,104 @@ import java.util.*;
 public class Fortress {
 	static Scanner sc = new Scanner(new BufferedReader(new InputStreamReader(System.in)));
 	static int[] x, y, radius;
-
+	static int N;
 	static int longest;
 
-	int height(TreeNode root){
-		List<Integer> heights = new ArrayList<>();
+	private static void solve() {
+		// init Settings
+		N = sc.nextInt();
+		x = new int[N];
+		y = new int[N];
+		radius = new int[N];
 
-		for(int i=0; i < root.children.size() ; ++i){
-			heights.add(height(root.children.get(i)));
+		for (int i = 0; i < N; ++i) {
+			x[i] = sc.nextInt();
+			y[i] = sc.nextInt();
+			radius[i] = sc.nextInt();
 		}
 
-		int hSize = heights.size();
+		// solve
+		longest = 0;
+		TreeNode root = getTree(0);
+		int h = height(root);
+		System.out.println(Math.max(longest, h));
+	}
 
-		// base case. if leaf node -> return 0;
-		if(hSize == 0){
-			return 0;
+	private static TreeNode getTree(int root) {
+		TreeNode ret = new TreeNode();
+
+		for (int i = 0; i < N; ++i) {
+			if (isChild(root, i)) {
+				ret.child.add(getTree(i));
+			}
 		}
 
-		// sorting for pick up biggest heights
-		Collections.sort(heights);
-
-		if(heights.size() >= 2){
-			longest = Math.max(longest, heights.get(hSize - 1) + heights.get(hSize-2));
-		}
-
-		// return heights
-		return heights.get(hSize - 1) + 1;
-
+		return ret;
 	}
 
-	int sqrdist(int a, int b){
-		return (int)(Math.pow(x[a] - x[b],2) + Math.pow(y[a] - y[b],2));
+	private static int sqr(int x) {
+		return x * x;
 	}
 
-	// check if wall a include wall b
-	boolean encloses(int a, int b){
-		return radius[a] > radius[b] && sqrdist(a,b) < Math.pow(radius[a] - radius[b],2);
+	// return distance between wall A and wall B
+	private static int sqrdist(int a, int b) {
+		return sqr(x[a] - x[b]) + sqr(y[a] - y[b]);
 	}
 
-	boolean isChild(int parent, int child){
-		if(!encloses(parent, child)){
+	// return true if wall A include wall B
+	private static boolean encloses(int a, int b) {
+		return radius[a] > radius[b] && sqrdist(a, b) < sqr(radius[a] - radius[b]);
+	}
+
+	private static boolean isChild(int parent, int child) {
+		if (!encloses(parent, child)) {
 			return false;
 		}
 
-		// for(int i=0; i<n ; ++i){
-		// 	if( i != parent && i != child && encloses(parent, i) && encloses(i, child)){
-		// 		return false;
-		// 	}
-		// }
+		for (int i = 0; i < N; ++i) {
+			if (i != parent && i != child && encloses(parent, i) && encloses(i, child)) {
+				return false;
+			}
+		}
 
 		return true;
 	}
 
+	private static int height(TreeNode root) {
+		List<Integer> heights = new ArrayList<>();
 
-	private static void solve(){
+		for (int i = 0; i < root.child.size(); ++i) {
+			heights.add(height(root.child.get(i)));
+		}
+
+		// base case
+		int len = heights.size();
+
+		if (len == 0)
+			return 0;
+
+		// sorting to find two largest heights
+		Collections.sort(heights);
+
+		if (len >= 2) {
+			longest = Math.max(longest, 2 + heights.get(len - 1) + heights.get(len - 2));
+		}
+
+		return 1 + heights.get(len - 1);
 	}
 
 	public static void main(String[] args) {
 		int tt = sc.nextInt();
 
-		for(int t=0; t<tt ; ++t){
+		for (int t = 0; t < tt; ++t) {
 			solve();
 		}
 	}
+
 }
 
-class TreeNode{
-	List<TreeNode> children;
+// TreeNode
+class TreeNode {
+	List<TreeNode> child = new ArrayList<>();
+	;
 }

@@ -10,6 +10,7 @@ public class Traversal {
 	static Scanner sc = new Scanner(new BufferedReader(new InputStreamReader(System.in)));
 
 	private static void solve() {
+		// init Settings
 		int n = sc.nextInt();
 		List<Integer> preOrder = new ArrayList<>();
 		List<Integer> inOrder = new ArrayList<>();
@@ -22,31 +23,27 @@ public class Traversal {
 			inOrder.add(sc.nextInt());
 		}
 
-		traversal(preOrder, inOrder);
+		travel(preOrder, inOrder);
 	}
 
-	private static void traversal(List<Integer> preOrder, List<Integer> inOrder) {
-		int n = preOrder.size();
+	private static void travel(List<Integer> preOrder, List<Integer> inOrder) {
+		int len = preOrder.size();
+
 		// base case
-		if (n == 0) {
+		if (len == 0) {
 			return;
 		}
 
 		int root = preOrder.get(0);
-		int l = -1;
 
-		// find root index in inOrder list
-		for (int i = 0; i < n; ++i) {
-			if (inOrder.get(i) == root) {
-				l = i;
-				break;
-			}
-		}
+		// find root index in inOrder List
+		int m = findIndex(inOrder, root);
 
-		traversal(slice(preOrder, 1, l + 1), slice(inOrder, 0, l));
-		traversal(slice(preOrder, l + 1, preOrder.size()), slice(inOrder, l + 1, inOrder.size()));
+		travel(slice(preOrder, 1, m + 1), slice(inOrder, 0, m));
+		travel(slice(preOrder, m + 1, preOrder.size()), slice(inOrder, m + 1, inOrder.size()));
 
 		System.out.print(root + " ");
+
 	}
 
 	private static List<Integer> slice(List<Integer> list, int start, int end) {
@@ -57,6 +54,16 @@ public class Traversal {
 		}
 
 		return newList;
+	}
+
+	private static int findIndex(List<Integer> list, int value) {
+		for (int i = 0; i < list.size(); ++i) {
+			if (list.get(i) == value) {
+				return i;
+			}
+		}
+
+		return -1;
 	}
 
 	public static void main(String[] args) {

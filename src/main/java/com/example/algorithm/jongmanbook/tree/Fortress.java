@@ -27,13 +27,13 @@ public class Fortress {
 
 		// solve
 		longest = 0;
-		TreeNode root = getTree(0);
+		TreeNode2 root = getTree(0);
 		int h = height(root);
 		System.out.println(Math.max(longest, h));
 	}
 
-	private static TreeNode getTree(int root) {
-		TreeNode ret = new TreeNode();
+	private static TreeNode2 getTree(int root) {
+		TreeNode2 ret = new TreeNode2();
 
 		for (int i = 0; i < N; ++i) {
 			if (isChild(root, i)) {
@@ -72,7 +72,7 @@ public class Fortress {
 		return true;
 	}
 
-	private static int height(TreeNode root) {
+	private static int height(TreeNode2 root) {
 		List<Integer> heights = new ArrayList<>();
 
 		for (int i = 0; i < root.child.size(); ++i) {
@@ -106,7 +106,7 @@ public class Fortress {
 }
 
 // TreeNode
-class TreeNode {
-	List<TreeNode> child = new ArrayList<>();
+class TreeNode2 {
+	List<TreeNode2> child = new ArrayList<>();
 	;
 }

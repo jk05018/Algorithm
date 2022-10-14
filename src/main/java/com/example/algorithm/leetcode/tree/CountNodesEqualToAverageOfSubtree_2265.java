@@ -1,4 +1,4 @@
-package com.example.algorithm.jongmanbook.tree;
+package com.example.algorithm.leetcode.tree;
 
 public class CountNodesEqualToAverageOfSubtree_2265 {
 	static int answer;

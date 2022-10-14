@@ -1,4 +1,4 @@
-package com.example.algorithm.jongmanbook.tree;
+package com.example.algorithm.leetcode.tree;
 
 public class TreeNode {
 	int val;

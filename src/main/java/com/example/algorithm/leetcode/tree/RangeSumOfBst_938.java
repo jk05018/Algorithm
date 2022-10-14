@@ -1,4 +1,4 @@
-package com.example.algorithm.jongmanbook.tree;
+package com.example.algorithm.leetcode.tree;
 
 class RangeSumOfBst_938 {
 	public int rangeSumBST(TreeNode root, int low, int high) {

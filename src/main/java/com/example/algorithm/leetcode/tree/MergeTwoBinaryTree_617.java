@@ -1,4 +1,4 @@
-package com.example.algorithm.jongmanbook.tree;
+package com.example.algorithm.leetcode.tree;
 
 public class MergeTwoBinaryTree_617 {
 	// Tree 아직 많이 약하다. 분발하자

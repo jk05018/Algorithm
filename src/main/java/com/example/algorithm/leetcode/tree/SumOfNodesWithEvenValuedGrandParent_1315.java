@@ -1,6 +1,4 @@
-package com.example.algorithm.jongmanbook.tree;
-
-import java.util.*;
+package com.example.algorithm.leetcode.tree;
 
 public class SumOfNodesWithEvenValuedGrandParent_1315 {
 	static int sum;

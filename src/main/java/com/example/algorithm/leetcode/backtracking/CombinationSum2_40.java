@@ -2,6 +2,11 @@ package com.example.algorithm.leetcode.backtracking;
 
 import java.util.*;
 
+/*
+Time Complexity  O(2^n)
+Permutation : O(N!)
+Combination : O(2^N)
+ */
 public class CombinationSum2_40 {
 	static List<List<Integer>> answer;
 

@@ -3,6 +3,10 @@ package com.example.algorithm.leetcode.backtracking;
 import java.util.ArrayList;
 import java.util.List;
 
+/*
+Time Complexity : O(2^2n)
+space : O(N)
+ */
 public class GenerateParenthesis_22 {
 	static List<String> answer;
 

@@ -2,6 +2,11 @@ package com.example.algorithm.leetcode.backtracking;
 
 import java.util.*;
 
+/*
+Time Complexity : O(N * N!) because answer.add(copyList(ans) is O(N)
+
+Permutation1보다 살찍 줄었을 것임
+ */
 public class Permutations2_47 {
 	static List<List<Integer>> answer;
 

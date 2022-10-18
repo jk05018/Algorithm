@@ -2,6 +2,10 @@ package com.example.algorithm.leetcode.backtracking;
 
 import java.util.*;
 
+/*
+Time Complexity : O(C(9,K)) 0> O(9^K),
+space : K
+ */
 public class CombinationSum3_216 {
 	static List<List<Integer>> answers;
 	static int N, K;

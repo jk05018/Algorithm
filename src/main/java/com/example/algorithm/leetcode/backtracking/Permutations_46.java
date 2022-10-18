@@ -2,6 +2,9 @@ package com.example.algorithm.leetcode.backtracking;
 
 import java.util.*;
 
+/*
+Time Complexity : O(N * N!) because answer.add(copyList(ans) is O(N)
+ */
 public class Permutations_46 {
 	static List<List<Integer>> answer;
 

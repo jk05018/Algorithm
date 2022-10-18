@@ -24,6 +24,7 @@ public class Subsets2_90 {
 
 		for (int i = index; i < N; ++i) {
 			if (i > index && nums[i] == nums[i - 1]) {
+				//skip the duplicates, except for the first time
 				continue;
 			}
 

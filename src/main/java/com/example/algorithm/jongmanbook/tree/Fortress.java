@@ -108,5 +108,4 @@ public class Fortress {
 // TreeNode
 class TreeNode2 {
 	List<TreeNode2> child = new ArrayList<>();
-	;
 }

@@ -1,4 +1,4 @@
-package com.example.algorithm.leetcode.tree.unionfind;
+package com.example.algorithm.leetcode.tree.unionfind.structure;
 
 import java.util.Arrays;
 

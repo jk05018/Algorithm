@@ -66,35 +66,33 @@ public class NumberOfEnclaves_1020 {
 		M = grid[0].length;
 		count = 0;
 
-		for(int i=0; i<N; ++i){
-			for(int j=0; j<M; ++j){
-				if((i == 0 || j == 0 || i == N-1 || j == M - 1) && grid[i][j] == 1){
+		for (int i = 0; i < N; ++i) {
+			for (int j = 0; j < M; ++j) {
+				if ((i == 0 || j == 0 || i == N - 1 || j == M - 1) && grid[i][j] == 1) {
 					dfs2(grid, i, j);
 				}
 			}
 		}
 
-		for(int i=0; i<N; ++i){
-			for(int j=0; j<M; ++j){
-				if(grid[i][j] == 1){
+		for (int i = 0; i < N; ++i) {
+			for (int j = 0; j < M; ++j) {
+				if (grid[i][j] == 1) {
 					++count;
 				}
 			}
 		}
 
-
 		return count;
 	}
 
-
-	public void dfs2(int[][] grid, int x, int y){
-		if(x < 0 || y < 0 || x>= N || y >= M || grid[x][y] == 0){
+	public void dfs2(int[][] grid, int x, int y) {
+		if (x < 0 || y < 0 || x >= N || y >= M || grid[x][y] == 0) {
 			return;
 		}
 
 		grid[x][y] = 0;
 
-		for(int i=0; i<4; ++i){
+		for (int i = 0; i < 4; ++i) {
 			int nextX = x + toX[i];
 			int nextY = y + toY[i];
 

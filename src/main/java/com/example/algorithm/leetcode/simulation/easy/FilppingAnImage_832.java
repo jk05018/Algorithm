@@ -12,15 +12,14 @@ public class FilppingAnImage_832 {
 		int N = image.length;
 		int[][] newImage = new int[N][N];
 
-		for(int i=0; i<N; ++i){
-			for(int j=N-1; j>=0; --j){
-				newImage[i][N-1 -j] = image[i][j] == 1 ? 0 : 1;
+		for (int i = 0; i < N; ++i) {
+			for (int j = N - 1; j >= 0; --j) {
+				newImage[i][N - 1 - j] = image[i][j] == 1 ? 0 : 1;
 			}
 		}
 
 		return newImage;
 	}
-
 
 	/*
 	Time Complexity : O(N * M)

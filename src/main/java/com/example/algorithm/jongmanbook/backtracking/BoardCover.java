@@ -5,9 +5,9 @@ import java.util.Scanner;
 public class BoardCover {
 	static int[][][] coverType = {
 		{{0, 0}, {1, 0}, {0, -1}},
-		{{0, 0}, {1,0}, {1, -1}},
-		{{0, 0}, {0,-1}, {1, -1}},
-		{{0, 0}, {0,-1}, {-1, -1}}
+		{{0, 0}, {1, 0}, {1, -1}},
+		{{0, 0}, {0, -1}, {1, -1}},
+		{{0, 0}, {0, -1}, {-1, -1}}
 	};
 
 	static int H, W;
@@ -62,7 +62,7 @@ public class BoardCover {
 			int toX = coverType[type][i][0];
 			int toY = coverType[type][i][1];
 
-			if (toX < 0 || toY < 0 || toX >= H || toY >= W){
+			if (toX < 0 || toY < 0 || toX >= H || toY >= W) {
 				flag = false;
 				continue;
 			}

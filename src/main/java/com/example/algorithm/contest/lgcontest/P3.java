@@ -15,23 +15,23 @@ public class P3 {
 		return jump(0, reference, track);
 	}
 
-	public int jump(int index, String reference, String track){
+	public int jump(int index, String reference, String track) {
 		// base case
-		if(index == N){
+		if (index == N) {
 			return Integer.MAX_VALUE;
 		}
 
 		// check cache
-		if(cache[index] != -1){
+		if (cache[index] != -1) {
 			return cache[index];
 		}
 
 		int ret = Integer.MIN_VALUE;
 
-		for(int plus = 1; index + plus <= N; ++plus){
+		for (int plus = 1; index + plus <= N; ++plus) {
 			String part = track.substring(index, index + plus);
 
-			if(reference.contains(part)){
+			if (reference.contains(part)) {
 				int temp = Math.min(plus, jump(index + plus, reference, track));
 				ret = Math.max(ret, temp);
 			}

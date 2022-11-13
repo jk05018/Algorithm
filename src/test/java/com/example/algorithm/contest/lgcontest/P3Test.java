@@ -21,7 +21,7 @@ class P3Test {
 		int result = new P3().solution(reference, track);
 
 		// then
-		assertEquals(result,answer);
+		assertEquals(result, answer);
 
 	}
 }

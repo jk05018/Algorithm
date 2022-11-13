@@ -5,7 +5,7 @@ public class P4 {
 	boolean[] reversed;
 	int[] count;
 
-	public int[] solutiuon( int[][] edges, int[] roots) {
+	public int[] solutiuon(int[][] edges, int[] roots) {
 		// init Settings
 		N = edges.length;
 		reversed = new boolean[N];
@@ -18,22 +18,21 @@ public class P4 {
 		return count;
 	}
 
-	public void check(int[][] edges, int root){
+	public void check(int[][] edges, int root) {
 		for (int i = 0; i < N; ++i) {
-			int left = reversed[i] ? edges[i][1]  : edges[i][0];
+			int left = reversed[i] ? edges[i][1] : edges[i][0];
 			int right = reversed[i] ? edges[i][0] : edges[i][1];
 
-			if(right == root){
+			if (right == root) {
 				check(edges, left);
 
-				if(reversed[i]){
+				if (reversed[i]) {
 					reversed[i] = false;
-				}else{
+				} else {
 					reversed[i] = true;
 				}
 
 				++count[i];
-
 
 			}
 		}
